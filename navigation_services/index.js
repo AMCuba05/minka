@@ -6,16 +6,65 @@ import Login from './../screens/Login';
 import LoginOrg from './../screens/LoginOrg';
 import SignInOrg from './../screens/SignInOrg';
 import OrganizationView from './../screens/OrganizationView';
+import {HomeTitle} from '../components/HomeTM/HomeTitle';
+import Icon from 'react-native-vector-icons/FontAwesome5';
+import TabNavigatorOrg from './tabNavOrg';
+
+Login.navigationOptions = {
+  title: 'Iniciar Sesion',
+  headerStyle: {
+    backgroundColor: 'white',
+  },
+  headerTitleStyle: {
+    fontWeight: 'bold',
+    fontSize: 26,
+    color: '#5849bf',
+    textAlign: 'center',
+  },
+  headerLeft: null,
+};
+
+LoginOrg.navigationOptions = {
+  title: 'Iniciar Sesion',
+  headerStyle: {
+    backgroundColor: 'white',
+  },
+  headerTitleStyle: {
+    fontWeight: 'bold',
+    fontSize: 26,
+    color: '#5849bf',
+    textAlign: 'center',
+  },
+  headerLeft: null,
+};
+
+OrganizationView.navigationOptions = {
+  headerTitle: () => <HomeTitle />,
+  headerLeft: null,
+};
+
+SignInOrg.navigationOptions = {
+  title: 'Crear Cuenta',
+  headerStyle: {
+    backgroundColor: 'white',
+  },
+  headerTitleStyle: {
+    fontWeight: 'bold',
+    fontSize: 26,
+    color: '#5849bf',
+    textAlign: 'center',
+  },
+  headerLeft: null,
+};
 
 const AppNavigator = createStackNavigator(
   {
     Home: HomeScreen,
     Login: {
       screen: Login,
-      shownHeader: false,
     },
     SignInOrg: SignInOrg,
-    OrganizationView: OrganizationView,
+    OrganizationView: TabNavigatorOrg,
     LoginOrg: LoginOrg,
   },
   {

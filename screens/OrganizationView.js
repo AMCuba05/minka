@@ -1,5 +1,12 @@
 import React, {Component} from 'react';
-import {View, Image, Text, StyleSheet, TouchableOpacity} from 'react-native';
+import {
+  View,
+  Image,
+  Text,
+  StyleSheet,
+  TouchableOpacity,
+  Button,
+} from 'react-native';
 import offerJob from './../assets/images/OfferJob.png';
 import offerCourse from './../assets/images/OfferCourse.png';
 
