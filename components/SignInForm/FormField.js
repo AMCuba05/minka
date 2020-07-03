@@ -7,13 +7,16 @@ export default class FormField extends Component {
       <View style={styles.card}>
         <Text style={styles.title}> Crea una cuenta</Text>
         <View style={styles.Container}>
-          <TextInput style={styles.TextInputUser} placeholder={'Nombre'} />
-        </View>
-        <View style={styles.Container}>
           <TextInput
             style={styles.TextInputUser}
-            placeholder={'Correo o Celular'}
+            placeholder={'Nombre Organizacion'}
           />
+        </View>
+        <View style={styles.Container}>
+          <TextInput style={styles.TextInputUser} placeholder={'Correo'} />
+        </View>
+        <View style={styles.Container}>
+          <TextInput style={styles.TextInputUser} placeholder={'NIT Empresa'} />
         </View>
         <View style={styles.Container}>
           <TextInput style={styles.TextInputUser} placeholder={'Contraseña'} />
