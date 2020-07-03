@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
 import {View, Text} from 'react-native';
 
-export default class NotificationsOrg extends Component {
+export default class NotificationsUsr extends Component {
   render() {
     return (
       <View>
-        <Text>NotificationsXD</Text>
+        <Text>Holi we aqui viene las notificaciones :v</Text>
       </View>
     );
   }

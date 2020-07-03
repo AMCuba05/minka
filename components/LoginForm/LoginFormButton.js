@@ -5,7 +5,11 @@ export default function LoginFormButton({navigation}) {
   return (
     <>
       <View style={styles.LoginFormButton}>
-        <Button color={'#5849bf'} title={'INICIAR SESION'} />
+        <Button
+          color={'#5849bf'}
+          title={'INICIAR SESION'}
+          onPress={() => navigation.navigate('UserView')}
+        />
       </View>
       <View style={styles.LoginOrg}>
         <Button
