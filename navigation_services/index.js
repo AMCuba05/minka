@@ -8,7 +8,8 @@ import SignInOrg from './../screens/SignInOrg';
 import OrganizationView from './../screens/OrganizationView';
 import {HomeTitle} from '../components/HomeTM/HomeTitle';
 import TabNavigatorOrg from './tabNavOrg';
-
+import SignInUsr from './../screens/SignInUsr'
+import TabNavigatorUsr from './../navigation_services/tabNavUsr';
 TabNavigatorOrg.navigationOptions = {
   headerTitle: () => <HomeTitle />,
   headerLeft: null,
@@ -47,6 +48,20 @@ OrganizationView.navigationOptions = {
   headerLeft: null,
 };
 
+SignInUsr.navigationOptions = {
+  title: 'Crear Cuenta',
+  headerStyle: {
+    backgroundColor: 'white',
+  },
+  headerTitleStyle: {
+    fontWeight: 'bold',
+    fontSize: 26,
+    color: '#5849bf',
+    textAlign: 'center',
+  },
+  headerLeft: null,
+};
+
 SignInOrg.navigationOptions = {
   title: 'Crear Cuenta',
   headerStyle: {
@@ -68,7 +83,9 @@ const AppNavigator = createStackNavigator(
       screen: Login,
     },
     SignInOrg: SignInOrg,
+    SignInUsr: SignInUsr,
     OrganizationView: TabNavigatorOrg,
+    UserView: TabNavigatorUsr,
     LoginOrg: LoginOrg,
   },
   {

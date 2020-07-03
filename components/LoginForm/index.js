@@ -14,7 +14,7 @@ export default function LoginForm({navigation}) {
         <LoginFormButton navigation={navigation} />
       </View>
       <View style={styles.CreateAccountButton}>
-        <CreateAccountButton />
+        <CreateAccountButton navigation={navigation} />
       </View>
     </ScrollView>
   );
