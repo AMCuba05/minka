@@ -45,6 +45,7 @@ export default class OfferCourse extends Component {
 const styles = StyleSheet.create({
   card: {
     backgroundColor: 'white',
+
     alignItems: 'flex-start',
     paddingVertical: 10,
     paddingHorizontal: 30,
