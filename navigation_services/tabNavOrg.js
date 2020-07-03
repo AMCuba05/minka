@@ -1,3 +1,4 @@
+/* eslint-disable eslint-comments/no-unused-disable */
 /* eslint-disable react-native/no-inline-styles */
 import React from 'react';
 import {createAppContainer} from 'react-navigation';

@@ -7,8 +7,12 @@ import LoginOrg from './../screens/LoginOrg';
 import SignInOrg from './../screens/SignInOrg';
 import OrganizationView from './../screens/OrganizationView';
 import {HomeTitle} from '../components/HomeTM/HomeTitle';
-import Icon from 'react-native-vector-icons/FontAwesome5';
 import TabNavigatorOrg from './tabNavOrg';
+
+TabNavigatorOrg.navigationOptions = {
+  headerTitle: () => <HomeTitle />,
+  headerLeft: null,
+};
 
 Login.navigationOptions = {
   title: 'Iniciar Sesion',
