@@ -9,6 +9,9 @@ import ProfileUsr from './../screens/ProfileUsr';
 import NotificationsUsr from './../screens/NotificationsUsr';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 
+
+
+
 const TabNavigatorUsr = createBottomTabNavigator(
   {
     Trabajo: Offers,

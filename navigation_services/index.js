@@ -10,6 +10,7 @@ import {HomeTitle} from '../components/HomeTM/HomeTitle';
 import TabNavigatorOrg from './tabNavOrg';
 import SignInUsr from './../screens/SignInUsr'
 import TabNavigatorUsr from './../navigation_services/tabNavUsr';
+
 TabNavigatorOrg.navigationOptions = {
   headerTitle: () => <HomeTitle />,
   headerLeft: null,
@@ -87,6 +88,7 @@ const AppNavigator = createStackNavigator(
     OrganizationView: TabNavigatorOrg,
     UserView: TabNavigatorUsr,
     LoginOrg: LoginOrg,
+    
   },
   {
     initialRouteName: 'Home',
