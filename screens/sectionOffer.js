@@ -7,7 +7,7 @@ export default class SectionOffer extends Component {
   render() {
     return (
       <View>
-          <Text>Holi</Text>
+          <Text>Holi </Text>
       </View>
     );
   }

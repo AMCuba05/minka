@@ -1,15 +1,14 @@
 
-import React, { useState } from 'react';
+import React from 'react';
 import {
     Text, StyleSheet,
-    View, FlatList,
-    TouchableHighlight,
-    TouchableWithoutFeedback,
+    View,
+    TouchableHighlight
 } from 'react-native';
 import { Left, Right } from 'native-base';
 
 
-const OfferJob = ({offer, navigation}) =>{
+const OfferJob = ({offer}) =>{
     return(
         <View style={styles.boxOffer}>
             <View style={styles.boxTitle}>
