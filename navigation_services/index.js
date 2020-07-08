@@ -10,11 +10,39 @@ import {HomeTitle} from '../components/HomeTM/HomeTitle';
 import TabNavigatorOrg from './tabNavOrg';
 import SignInUsr from './../screens/SignInUsr'
 import TabNavigatorUsr from './../navigation_services/tabNavUsr';
+import SectionTrainingInfo from './../screens/SectionTrainingInfo';
+import OffersInfo from './../screens/OffersInfo';
 
 TabNavigatorOrg.navigationOptions = {
   headerTitle: () => <HomeTitle />,
   headerLeft: null,
 };
+
+OffersInfo.navigationOptions = {
+  title: 'minka',
+    headerStyle: {
+      backgroundColor: 'white',
+    },
+    headerTitleStyle:{
+      
+      color: '#5849bf',
+      fontSize: 26,
+      textAlign: 'center',
+    }
+}
+
+SectionTrainingInfo.navigationOptions = {
+    title: 'minka',
+    headerStyle: {
+      backgroundColor: 'white',
+    },
+    headerTitleStyle:{
+      
+      color: '#5849bf',
+      fontSize: 26,
+      textAlign: 'center',
+    }
+}
 
 Login.navigationOptions = {
   title: 'Iniciar Sesion',
@@ -88,6 +116,8 @@ const AppNavigator = createStackNavigator(
     OrganizationView: TabNavigatorOrg,
     UserView: TabNavigatorUsr,
     LoginOrg: LoginOrg,
+    CourseInfo: SectionTrainingInfo,
+    OfferInfo: OffersInfo,
     
   },
   {

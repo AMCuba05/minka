@@ -8,7 +8,7 @@ import {
 import { Left, Right } from 'native-base';
 
 
-const OfferJob = ({offer}) =>{
+const OfferJob = ({offer, navigation}) =>{
     return(
         <View style={styles.boxOffer}>
             <View style={styles.boxTitle}>
@@ -22,8 +22,18 @@ const OfferJob = ({offer}) =>{
                 <Text style={styles.info}>Publicado: {offer.posted} </Text>
             </View>
             <View >
-                <TouchableHighlight  style={styles.boxBtn}>
-                    <Text style={styles.btnText}>Aplicar +</Text>
+                <TouchableHighlight
+                onPress={() => navigation.navigate('OfferInfo',{
+                    titulo: offer.title,
+                    horas: offer.hours,
+                    ubicacion: offer.ubication,
+                    fecha: offer.posted,
+                    pago: offer.payment,
+                    descripcion: offer.descripcion,
+                })}
+                style={styles.boxBtn}
+                underlayColor= 'rgba(141,126,242,0.6)'>
+                    <Text style={styles.btnText}>Leer Mas</Text>
                 </TouchableHighlight>
             </View>
             
@@ -50,7 +60,8 @@ const styles = StyleSheet.create({
         fontSize: 17,
         lineHeight: 17,
         fontFamily: 'Montserrat',
-        paddingHorizontal: 15
+        paddingHorizontal: 15,
+        fontWeight: 'bold'
         
     },
     boxInfo:{
