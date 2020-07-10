@@ -8,10 +8,7 @@ export default function LoginForm({navigation}) {
   return (
     <ScrollView style={styles.LoginForm}>
       <View>
-        <LoginInput />
-      </View>
-      <View>
-        <LoginFormButton navigation={navigation} />
+        <LoginInput navigation={navigation} />
       </View>
       <View style={styles.CreateAccountButton}>
         <CreateAccountButton navigation={navigation} />
