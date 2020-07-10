@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Modal, View, Text, StyleSheet, TouchableHighlight, Picker } from 'react-native';
 import { RadioButton } from 'react-native-paper';
 import Zone from '../Pickers/Zone';
-const ModalPost = ({ modalVisible, setModalVisible }) => {
+const ModalCourse = ({ modalVisible, setModalVisible }) => {
   const [checked, setChecked] = React.useState('all');
   const [selectedValue, setSelectedValue] = useState('Sin Experiencia');
   return (
@@ -127,4 +127,4 @@ const styles = StyleSheet.create({
   }
 })
 
-export default ModalPost;
+export default ModalCourse;
