@@ -1,6 +1,6 @@
 /* eslint-disable react-native/no-inline-styles */
 import React, {useState} from 'react';
-import {View, Button, Platform, Text, TouchableOpacity} from 'react-native';
+import {View, Platform, Text, TouchableOpacity} from 'react-native';
 import DateTimePicker from '@react-native-community/datetimepicker';
 
 export default function ProfileOrg() {
@@ -20,7 +20,7 @@ export default function ProfileOrg() {
   };
 
   const showDatepicker = () => {
-    showMode('date');
+    showMode('time');
   };
 
   return (
@@ -40,7 +40,7 @@ export default function ProfileOrg() {
               textAlign: 'left',
               fontSize: 16,
             }}>
-            {`${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`}
+            {`${date.getHours()}:${date.getMinutes()}`}
           </Text>
         </TouchableOpacity>
       </View>

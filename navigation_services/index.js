@@ -8,11 +8,11 @@ import SignInOrg from './../screens/SignInOrg';
 import OrganizationView from './../screens/OrganizationView';
 import {HomeTitle} from '../components/HomeTM/HomeTitle';
 import TabNavigatorOrg from './tabNavOrg';
-import SignInUsr from './../screens/SignInUsr'
+import SignInUsr from './../screens/SignInUsr';
 import TabNavigatorUsr from './../navigation_services/tabNavUsr';
+
 TabNavigatorOrg.navigationOptions = {
-  headerTitle: () => <HomeTitle />,
-  headerLeft: null,
+  header: null,
 };
 
 Login.navigationOptions = {

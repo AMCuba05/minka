@@ -11,6 +11,8 @@ import ExperiencePicker from './../components/Pickers/ExperiencePicker';
 import HourCargo from './../components/Pickers/HourCargo';
 import Zone from './../components/Pickers/Zone';
 import Field from './../components/Pickers/Field';
+import DatePicker from './../components/Pickers/DatePicker';
+import TimePicker from './../components/Pickers/TimePicker';
 
 export default class OfferJob extends Component {
   render() {
@@ -49,6 +51,14 @@ export default class OfferJob extends Component {
           <View>
             <Text style={styles.textForm}>Experiencia</Text>
             <ExperiencePicker />
+          </View>
+          <View>
+            <Text style={styles.textForm}>Fecha de Entrevista</Text>
+            <DatePicker />
+          </View>
+          <View>
+            <Text style={styles.textForm}>Hora Entrevista</Text>
+            <TimePicker />
           </View>
           <View style={styles.button}>
             <Button color={'#8d7ef2'} title={'Aceptar'} />
