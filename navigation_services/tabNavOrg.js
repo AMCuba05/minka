@@ -6,14 +6,14 @@ import {createBottomTabNavigator} from 'react-navigation-tabs';
 import OfferJob from './../screens/OfferJob';
 import OfferCourse from './../screens/OfferCourse';
 import ProfileOrg from './../screens/ProfileOrg';
-import NotificationsOrg from './../screens/NotificationsOrg';
+import NotificationsNavOrg from './notificationsNavOrg';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 
 const TabNavigatorOrg = createBottomTabNavigator(
   {
     Trabajo: OfferJob,
     Cursos: OfferCourse,
-    Notificaciones: NotificationsOrg,
+    Notificaciones: NotificationsNavOrg,
     Perfil: ProfileOrg,
   },
   {

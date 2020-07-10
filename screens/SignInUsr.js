@@ -9,7 +9,7 @@ export default class SignInUsr extends Component {
     return (
       <View style={styles.container}>
         <HomeTitle />
-        <FormFieldUsr />
+        <FormFieldUsr navigation={this.props.navigation} />
         <SignInInfo />
       </View>
     );

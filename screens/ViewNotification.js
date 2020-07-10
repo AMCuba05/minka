@@ -2,24 +2,22 @@ import React, {Component} from 'react';
 import {View, Text, Button, FlatList, StyleSheet} from 'react-native';
 
 const data = [{id: 1}, {id: 2}, {id: 3}, {id: 4}, {id: 5}, {id: 6}, {id: 7}];
-export default class NotificationsOrg extends Component {
+export default class ViewNotification extends Component {
   renderItem(item) {
     return (
       <View style={styles.card}>
         <View style={styles.title}>
-          <Text style={styles.textTitle}>Nombre Trabajo {item.id}</Text>
+          <Text style={styles.textTitle}>Perfil name {item.id}</Text>
         </View>
         <View>
-          <Text>Carga Horaria</Text>
-          <Text>Pago</Text>
-          <Text>Ubicacion</Text>
-          <Text>Fecha</Text>
+          <Text>Celular</Text>
         </View>
-        <Button
-          title={'ver'}
-          onPress={() => this.props.navigation.navigate('ViewNotification')}
-          color={'rgb(141, 126, 242)'}
-        />
+        <View style={styles.buttons}>
+          <View style={styles.button}>
+            <Button title={'Invitar'} color={'rgb(141, 126, 242)'} />
+          </View>
+          <Button title={'Rechazar'} color={'rgb(141, 126, 242)'} />
+        </View>
       </View>
     );
   }
@@ -51,5 +49,12 @@ const styles = StyleSheet.create({
   textTitle: {
     textAlign: 'center',
     fontSize: 18,
+  },
+  buttons: {
+    flexDirection: 'row',
+    justifyContent: 'flex-end',
+  },
+  button: {
+    paddingHorizontal: 10,
   },
 });

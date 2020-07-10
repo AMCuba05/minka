@@ -1,7 +1,32 @@
 import React, {Component} from 'react';
-import {TextInput, StyleSheet, View} from 'react-native';
+import {TextInput, StyleSheet, View, Button, Alert} from 'react-native';
+import axios from 'axios';
 
 export default class LoginInput extends Component {
+  constructor(props) {
+    super(props);
+    this.OrgData = '';
+    this.state = {
+      email: '',
+      password: '',
+    };
+  }
+
+  validate(navigation) {
+    axios
+      .post('https://api-minka.herokuapp.com/organization/signin', {
+        email: this.state.email,
+        password: this.state.password,
+      })
+      .then(function(response) {
+        navigation.navigate('OrganizationView');
+        this.OrgData = response.data;
+      })
+      .catch(function(error) {
+        Alert.alert('Error');
+      });
+  }
+
   render() {
     return (
       <>
@@ -9,10 +34,23 @@ export default class LoginInput extends Component {
           <TextInput
             style={styles.TextInputUser}
             placeholder={'Correo Electronico'}
+            onChangeText={text => this.setState({email: text})}
           />
         </View>
         <View>
-          <TextInput style={styles.TextInputUser} placeholder={'Contraseña'} />
+          <TextInput
+            secureTextEntry={true}
+            style={styles.TextInputUser}
+            placeholder={'Contraseña'}
+            onChangeText={text => this.setState({password: text})}
+          />
+        </View>
+        <View style={styles.LoginFormButton}>
+          <Button
+            color={'#5849bf'}
+            title={'INICIAR SESION'}
+            onPress={() => this.validate(this.props.navigation)}
+          />
         </View>
       </>
     );
@@ -32,5 +70,15 @@ const styles = StyleSheet.create({
   },
   Container: {
     paddingVertical: 10,
+  },
+  LoginFormButton: {
+    fontSize: 15,
+    color: 'white',
+    paddingTop: 10,
+  },
+  LoginOrg: {
+    fontSize: 15,
+    color: '#8d7ef2',
+    paddingTop: 10,
   },
 });
