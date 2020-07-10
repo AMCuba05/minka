@@ -1,16 +1,18 @@
 import React from 'react';
 import {View, Text, Button, StyleSheet} from 'react-native';
 import OfferjobsPost from '../components/OfferPost/offerPost';
-import {HomeTitle} from '../components/HomeTM/HomeTitle';
-
+import OfferTitleBtn from '../components/OfferPost/OfferTitleBtn'
 export default class Offers extends React.Component {
   
   render() {
     
     return (
       <View>
+        <View style={styles.body}>
 
-        
+        <OfferTitleBtn/>
+        </View>
+
         <OfferjobsPost 
             navigation={this.props.navigation}
         />
@@ -21,11 +23,10 @@ export default class Offers extends React.Component {
 }
 
 const styles = StyleSheet.create({
-  btn:{
-    width: 50,
-    position: 'relative',
-    alignSelf: 'flex-end',
-    marginTop: 0
+  body: {
+    backgroundColor: '#f1f9ff',
   }
 })
+
+
 

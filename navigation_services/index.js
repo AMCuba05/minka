@@ -29,7 +29,7 @@ OffersInfo.navigationOptions = {
 SectionTrainingInfo.navigationOptions = {
   headerTitle: () => <HomeTitle />,
 };
-
+}
 Login.navigationOptions = {
   title: 'Iniciar Sesion',
   headerStyle: {

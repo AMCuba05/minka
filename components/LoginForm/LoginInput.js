@@ -50,7 +50,7 @@ export default class LoginInput extends Component {
           <Button
             color={'#5849bf'}
             title={'INICIAR SESION'}
-            onPress={() => this.validate()}
+            onPress={() => this.props.navigation.navigate('UserView')}
           />
         </View>
         <View style={styles.LoginOrg}>
