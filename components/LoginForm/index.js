@@ -30,12 +30,12 @@ export default class LoginForm extends Component {
         password: this.state.password,
       })
       .then(function(response) {
-        console.log(response.status);
-        navigation.navigate('UserView');
+        navigation.navigate('UserView', {
+          itemID: response.data._id,
+        });
       })
       .catch(function(error) {
         Alert.alert('Error');
-        console.log(error);
       });
   }
 

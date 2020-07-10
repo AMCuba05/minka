@@ -25,7 +25,7 @@ export default class OfferCourse extends Component {
     };
   }
 
-  validation() {
+  validation(id) {
     const blanckspaces =
       this.state.organizationName === '' ||
       this.state.courseName === '' ||
@@ -45,8 +45,27 @@ export default class OfferCourse extends Component {
           quota: Number(this.state.quota),
         })
         .then(function(response) {
-          console.log(response.data);
-          Alert.alert('Curso publicado correctamente');
+          const newCourse = response.data._id;
+          axios
+            .get('https://api-minka.herokuapp.com/organization/' + id)
+            .then(function(responseGet) {
+              const courses = responseGet.data.courses;
+              axios
+                .put('https://api-minka.herokuapp.com/organization/' + id, {
+                  courses: [
+                    ...courses,
+                    {
+                      _id: newCourse,
+                    },
+                  ],
+                })
+                .then(r => console.log(r.status))
+                .catch(e => console.log(e));
+              Alert.alert('Curso publicado correctamente');
+            })
+            .catch(function(error) {
+              console.log(error);
+            });
         })
         .catch(function(error) {
           console.log(error);
@@ -140,7 +159,9 @@ export default class OfferCourse extends Component {
             <Button
               color={'#8d7ef2'}
               title={'Aceptar'}
-              onPress={() => this.validation()}
+              onPress={() => {
+                this.validation(this.props.navigation.getParam('itemID'));
+              }}
             />
           </View>
         </View>

@@ -6,22 +6,21 @@ import NotificationsUsr from './../screens/NotificationsUsr';
 
 import OffersInfo from './../screens/OffersInfo';
 import SectionTrainingInfo from './../screens/SectionTrainingInfo';
-import NotificationTitle from './../components/NotificationView/notificationTitle';  
+import NotificationTitle from './../components/NotificationView/notificationTitle';
 
-NotificationsUsr.navigationOptions= {
-    headerTitle: () => <NotificationTitle/>,
-}
-
+NotificationsUsr.navigationOptions = {
+  headerTitle: () => <NotificationTitle />,
+};
 const buttonsNavUserNot = createStackNavigator(
-    {
-        NotificationsUsr: NotificationsUsr,
+  {
+    NotificationsUsr: NotificationsUsr,
 
-        OfferInfo: OffersInfo,
-        CourseInfo: SectionTrainingInfo,
-    },
-    {
-      initialRouteName: 'NotificationsUsr',
-    },
-  );
-  
-  export default createAppContainer(buttonsNavUserNot);
+    OfferInfo: OffersInfo,
+    CourseInfo: SectionTrainingInfo,
+  },
+  {
+    initialRouteName: 'NotificationsUsr',
+  },
+);
+
+export default createAppContainer(buttonsNavUserNot);

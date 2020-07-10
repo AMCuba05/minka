@@ -10,14 +10,15 @@ ViewNotification.navigationOptions = {
   headerLeft: null,
 };
 
-NotificationsOrg.navigationOptions = {
-  headerTitle: () => <HomeTitle />,
-  headerLeft: null,
-};
-
 const NotificationsNavOrg = createStackNavigator(
   {
-    Notifications: NotificationsOrg,
+    Notifications: {
+      screen: NotificationsOrg,
+      navigationOptions: ({navigation}) => ({
+        headerTitle: () => <HomeTitle />,
+        headerLeft: null,
+      }),
+    },
     ViewNotification: ViewNotification,
   },
   {

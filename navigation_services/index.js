@@ -13,9 +13,14 @@ import SignInUsr from './../screens/SignInUsr';
 import TabNavigatorUsr from './../navigation_services/tabNavUsr';
 import OffersInfo from './../screens/OffersInfo';
 import SectionTrainingInfo from './../screens/SectionTrainingInfo';
+import ViewNotification from './../screens/ViewNotification';
 
 TabNavigatorOrg.navigationOptions = {
   header: null,
+};
+
+ViewNotification.navigationOptions = {
+  title: 'Usuarios registrados',
 };
 
 TabNavigatorUsr.navigationOptions = {
@@ -104,6 +109,7 @@ const AppNavigator = createStackNavigator(
     LoginOrg: LoginOrg,
     CourseInfo: SectionTrainingInfo,
     OfferInfo: OffersInfo,
+    ViewNotification: ViewNotification,
   },
   {
     initialRouteName: 'Home',
