@@ -12,14 +12,14 @@ const OfferJob = ({offer, navigation}) =>{
     return(
         <View style={styles.boxOffer}>
             <View style={styles.boxTitle}>
-                <Text style={styles.title}>{offer.title} </Text>
+                <Text style={styles.title}>{offer.organizationName} </Text>
             </View>
             
             <View style={styles.boxInfo}>
-                <Text style={styles.info}>Carga Horaria: {offer.hours} </Text>
-                <Text style={styles.info}>Pago: {offer.payment} </Text>
-                <Text style={styles.info}>Ubicacion: {offer.ubication} </Text>
-                <Text style={styles.info}>Publicado: {offer.posted} </Text>
+                <Text style={styles.info}>Carga Horaria: {offer.workload} </Text>
+                <Text style={styles.info}>Pago: {offer.payRange} </Text>
+                <Text style={styles.info}>Ubicacion: {offer.location} </Text>
+                <Text style={styles.info}>Publicado: {offer.createdAt} </Text>
             </View>
             <View >
                 <TouchableHighlight
