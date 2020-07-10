@@ -9,12 +9,12 @@ export default function DiffucultPicker({dificult}) {
         selectedValue={selectedValue}
         style={styles.picker}
         onValueChange={(itemValue, itemIndex) => {
+          dificult = itemValue;
           setSelectedValue(itemValue);
         }}>
         <Picker.Item label="Basico" value="basico" />
         <Picker.Item label="Intermedio" value="intermedio" />
         <Picker.Item label="Avanzado" value="avanzado" />
-        {dificult = selectedValue}
       </Picker>
     </View>
   );
