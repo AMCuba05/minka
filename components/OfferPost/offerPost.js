@@ -5,7 +5,6 @@ import {
     View, FlatList
 } from 'react-native';
 import OfferJob from './offerJob';
-
 const OfferjobsPost = ({navigation}) => {
 
     const [offerJob, setOfferJob] = useState([
@@ -31,14 +30,17 @@ const OfferjobsPost = ({navigation}) => {
     ]);
 
     return (
+
         <View style={styles.body}>
+
             
             <FlatList
 
                 data={offerJob}
-                renderItem={({ item }) => <OfferJob offer={item} navigation={navigation}/>}
+                renderItem={({ item }) => <OfferJob offer={item} navigation={navigation} />}
                 keyExtractor={offer => offer.id}
             />
+            
         </View>
     )
 

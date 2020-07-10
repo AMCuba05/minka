@@ -15,7 +15,7 @@ export default class FormFieldUsr extends Component {
     };
   }
 
-  validate() {
+  validate(navigation) {
     const blanckspaces =
       this.state.name === '' ||
       this.state.email === '' ||
@@ -31,12 +31,8 @@ export default class FormFieldUsr extends Component {
             password: this.state.password,
           })
           .then(function(response) {
-            Alert.alert('Usuario Registrado Correctamente', [
-              {
-                text: 'OK',
-                onPress: () => this.props.navigation.navigate('Login'),
-              },
-            ]);
+            Alert.alert('Usuario Registrado Correctamente');
+            navigation.navigate('Login');
             this.userData = response.data;
           })
           .catch(function(error) {
@@ -94,7 +90,7 @@ export default class FormFieldUsr extends Component {
         <Button
           color={'#8d7ef2'}
           title={'REGISTRARSE'}
-          onPress={() => this.validate()}
+          onPress={() => this.validate(this.props.navigation)}
         />
       </View>
     );
