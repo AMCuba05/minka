@@ -8,16 +8,16 @@ import Offers from './../screens/Offers';
 import ProfileUsr from './../screens/ProfileUsr';
 import NotificationsUsr from './../screens/NotificationsUsr';
 import Icon from 'react-native-vector-icons/FontAwesome5';
-import OfferNav from './../screens/OfferNav';
-
-
+import buttonsNavUsrCourse from './buttonsNavUsrCourse';
+import buttonsNavUserOffer from './buttonsNavUsrOffer';
+import buttonsNavUsrNot from './buttonsNavUsrNot';
 
 
 const TabNavigatorUsr = createBottomTabNavigator(
   {
-    Trabajo: OfferNav,
-    Cursos: SectionTraining,
-    Notificaciones: NotificationsUsr,
+    Trabajo: buttonsNavUserOffer,
+    Cursos: buttonsNavUsrCourse,
+    Notificaciones: buttonsNavUsrNot,
     Perfil: ProfileUsr,
   },
   {

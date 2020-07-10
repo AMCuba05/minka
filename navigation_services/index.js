@@ -20,17 +20,6 @@ TabNavigatorUsr.navigationOptions = {
   header: null,
 }
 
-
-OffersInfo.navigationOptions = {
-  headerTitle: () => <HomeTitle />,
-  
-}
-
-SectionTrainingInfo.navigationOptions = {
-  headerTitle: () => <HomeTitle />,
-  
-}
-
 Login.navigationOptions = {
   title: 'Iniciar Sesion',
   headerStyle: {
@@ -105,8 +94,6 @@ const AppNavigator = createStackNavigator(
     OrganizationView: TabNavigatorOrg,
     UserView: TabNavigatorUsr,
     LoginOrg: LoginOrg,
-    CourseInfo: SectionTrainingInfo,
-    OfferInfo: OffersInfo,
     
   },
   {
