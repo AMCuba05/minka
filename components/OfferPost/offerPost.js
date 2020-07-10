@@ -5,6 +5,7 @@ import {
     View, FlatList
 } from 'react-native';
 import OfferJob from './offerJob';
+import OfferTitleBtn from './OfferTitleBtn';
 import axios from 'axios';
 const OfferjobsPost = ({navigation}) => {
 
@@ -22,7 +23,7 @@ const OfferjobsPost = ({navigation}) => {
     return (
 
         <View style={styles.body}>
-
+            <OfferTitleBtn setOfferJob={setOfferJob}/>
             
             <FlatList
 

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, StyleSheet, ScrollView, Text, TouchableHighlight } from 'react-native';
+import { View, StyleSheet, ScrollView, Text, TouchableHighlight, TextInput } from 'react-native';
 
 export default class SectionTrainingInfo extends React.Component {
 
@@ -22,6 +22,19 @@ export default class SectionTrainingInfo extends React.Component {
                         
                         <Text style={styles.boxText}>Nivel: {navigation.getParam('nivel', 'default value')} </Text>
                         <Text style={styles.boxText}>Fecha: {navigation.getParam('fecha', 'default value')} </Text>
+
+                        <TextInput
+                        style={styles.TextInputUser}
+                        placeholder={'Inserte su nombre'}
+                        secureTextEntry={true}
+                        
+                        />
+                        <TextInput
+                        style={styles.TextInputUser}
+                        placeholder={'Inserte un numero de contacto '}
+                        secureTextEntry={true}
+                        
+                        />
 
                         <TouchableHighlight 
                         underlayColor= 'rgba(141,126,242,0.6)'
@@ -88,5 +101,17 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         lineHeight: 25,
         fontWeight: '600',
-     }
+     },
+     TextInputUser: {
+         marginVertical: 10,
+         width: 270,
+         height: 44,
+         borderStyle: 'solid',
+         borderWidth: 2,
+         borderRadius: 10,
+         borderColor: '#bce0fd',
+         alignSelf: 'center',
+         color: '#2c3d60',
+         backgroundColor: '#FFF',
+       },
 })
