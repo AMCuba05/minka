@@ -12,6 +12,7 @@ import Icon from 'react-native-vector-icons/FontAwesome5';
 
 
 
+
 const TabNavigatorUsr = createBottomTabNavigator(
   {
     Trabajo: Offers,
@@ -21,6 +22,7 @@ const TabNavigatorUsr = createBottomTabNavigator(
   },
   {
     defaultNavigationOptions: ({navigation}) => ({
+      
       showLabel: false,
       tabBarIcon: ({focused, horizontal, tintColor}) => {
         const {routeName} = navigation.state;
@@ -45,6 +47,8 @@ const TabNavigatorUsr = createBottomTabNavigator(
       inactiveTintColor: 'gray',
     },
   },
+
+  
 );
 
 export default createAppContainer(TabNavigatorUsr);

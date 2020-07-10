@@ -5,7 +5,7 @@ export const HomeTitle = () => <Text style={styles.HomeTitle}>minka</Text>;
 
 const styles = StyleSheet.create({
   HomeTitle: {
-    fontSize: 52,
+    fontSize: 50,
     fontFamily: 'Poppins',
     color: '#5849bf',
     fontWeight: 'bold',

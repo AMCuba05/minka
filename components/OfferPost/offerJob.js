@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
     title:{
         fontSize: 17,
         lineHeight: 17,
-        fontFamily: 'Montserrat',
+        fontFamily: 'Poppins',
         paddingHorizontal: 15,
         fontWeight: 'bold'
         
@@ -69,7 +69,7 @@ const styles = StyleSheet.create({
         
     },
     info:{
-        fontFamily: 'Montserrat',
+        fontFamily: 'Poppins',
         fontSize:15,
         lineHeight:18
     },

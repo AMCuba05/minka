@@ -1,12 +1,26 @@
-import React, {Component} from 'react';
-import {View, Text} from 'react-native';
+import React, { useState} from 'react';
+import { View, Text, TouchableHighlight, ScrollView, StyleSheet } from 'react-native';
 
-export default class NotificationsUsr extends Component {
+import NotificationBtn from './../components/NotificationView/NotificationBtn';
+export default class NotificationsUsr extends React.Component {
+
+  
   render() {
+    
     return (
-      <View>
-        <Text>Holi we aqui viene las notificaciones :v</Text>
-      </View>
+      <ScrollView style={styles.body}>
+          <NotificationBtn
+            navigation = {this.props.navigation}
+          />
+      </ScrollView>
     );
   }
 }
+
+
+
+const styles = StyleSheet.create({
+  body: {
+    backgroundColor: '#FFF',
+  }
+})

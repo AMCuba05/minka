@@ -1,5 +1,6 @@
 import React from 'react';
 import {createAppContainer} from 'react-navigation';
+import {TouchableHighlight} from 'react-native';
 import {createStackNavigator} from 'react-navigation-stack';
 import HomeScreen from './../screens/Home';
 import Login from './../screens/Login';
@@ -12,36 +13,24 @@ import SignInUsr from './../screens/SignInUsr'
 import TabNavigatorUsr from './../navigation_services/tabNavUsr';
 import SectionTrainingInfo from './../screens/SectionTrainingInfo';
 import OffersInfo from './../screens/OffersInfo';
+import Offers from './../screens/Offers';
+
 
 TabNavigatorOrg.navigationOptions = {
   headerTitle: () => <HomeTitle />,
   headerLeft: null,
 };
 
+
+
 OffersInfo.navigationOptions = {
-  title: 'minka',
-    headerStyle: {
-      backgroundColor: 'white',
-    },
-    headerTitleStyle:{
-      
-      color: '#5849bf',
-      fontSize: 26,
-      textAlign: 'center',
-    }
+  headerTitle: () => <HomeTitle />,
+  
 }
 
 SectionTrainingInfo.navigationOptions = {
-    title: 'minka',
-    headerStyle: {
-      backgroundColor: 'white',
-    },
-    headerTitleStyle:{
-      
-      color: '#5849bf',
-      fontSize: 26,
-      textAlign: 'center',
-    }
+  headerTitle: () => <HomeTitle />,
+  
 }
 
 Login.navigationOptions = {
@@ -105,6 +94,8 @@ SignInOrg.navigationOptions = {
   headerLeft: null,
 };
 
+
+
 const AppNavigator = createStackNavigator(
   {
     Home: HomeScreen,
@@ -122,6 +113,7 @@ const AppNavigator = createStackNavigator(
   },
   {
     initialRouteName: 'Home',
+    
   },
 );
 
