@@ -2,23 +2,38 @@ import React, { useState, useEffect } from 'react';
 import { Modal, View, Text, StyleSheet, TouchableHighlight, Picker } from 'react-native';
 import { RadioButton } from 'react-native-paper';
 import Zone from '../Pickers/Zone';
-const ModalPost = ({ modalVisible, setModalVisible,setOfferJob }) => {
+import axios from 'axios';
+const ModalPost = ({ modalVisible, setModalVisible, setOfferJob }) => {
   const [checked, setChecked] = React.useState('all');
-  const [selectedValue, setSelectedValue] = useState('Sin Experiencia');
-  
-  useEffect(() => {
-    if(checked == 'reposteria'){
-      const consultarAPIreposteria = async() => {
-        const url = 'https://api-minka.herokuapp.com/job?field=reposteria';
-        const resultado = await axios.get(url);
-        console.log(resultado.data);
+  const [guardar, setGuardar] = React.useState('');
++
 
-    }
+  useEffect(() => {
+    
+      const consultarAPIreposteria = async() => {
+        if(checked == 'all'){
+          const url = 'https://api-minka.herokuapp.com/job';
+          const resultado = await axios.get(url);
+          setOfferJob(resultado.data);
+      
+        }else if (checked == 'reposteria'){
+
+          const url = 'https://api-minka.herokuapp.com/job?field=reposteria';
+          const resultado = await axios.get(url);
+          setOfferJob(resultado.data);
+        }
+        
+    
+    
+  }
     consultarAPIreposteria();
+    
+    
     }
     
     
 },[]);
+
 
   return (
 
@@ -75,7 +90,7 @@ const ModalPost = ({ modalVisible, setModalVisible,setOfferJob }) => {
           <TouchableHighlight
             style={styles.openButton}
             underlayColor= 'rgba(141,126,242,0.6)'
-            onPress={() => { setModalVisible(!modalVisible) }}
+            onPress={() => { setModalVisible(!modalVisible), setOFertas() }}
           >
             <Text style={styles.textStyle}>Filtrar</Text>
           </TouchableHighlight>
