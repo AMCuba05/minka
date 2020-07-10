@@ -19,7 +19,10 @@ export default class LoginInput extends Component {
         password: this.state.password,
       })
       .then(function(response) {
-        navigation.navigate('OrganizationView');
+        console.log(response.data._id);
+        navigation.navigate('OrganizationView', {
+          itemID: response.data._id,
+        });
         this.OrgData = response.data;
       })
       .catch(function(error) {

@@ -3,7 +3,7 @@ import React, {useState} from 'react';
 import {View, Button, Platform, Text, TouchableOpacity} from 'react-native';
 import DateTimePicker from '@react-native-community/datetimepicker';
 
-export default function ProfileOrg() {
+export default function ProfileOrg({interviewDate}) {
   const [date, setDate] = useState(new Date());
   const [mode, setMode] = useState('date');
   const [show, setShow] = useState(false);
@@ -12,6 +12,7 @@ export default function ProfileOrg() {
     const currentDate = selectedDate || date;
     setShow(Platform.OS === 'ios');
     setDate(currentDate);
+    interviewDate = currentDate;
   };
 
   const showMode = currentMode => {

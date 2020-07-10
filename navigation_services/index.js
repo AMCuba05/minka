@@ -11,6 +11,8 @@ import {HomeTitle} from '../components/HomeTM/HomeTitle';
 import TabNavigatorOrg from './tabNavOrg';
 import SignInUsr from './../screens/SignInUsr';
 import TabNavigatorUsr from './../navigation_services/tabNavUsr';
+import OffersInfo from './../screens/OffersInfo';
+import SectionTrainingInfo from './../screens/SectionTrainingInfo';
 
 TabNavigatorOrg.navigationOptions = {
   header: null,
@@ -18,18 +20,15 @@ TabNavigatorOrg.navigationOptions = {
 
 TabNavigatorUsr.navigationOptions = {
   header: null,
-}
-
+};
 
 OffersInfo.navigationOptions = {
   headerTitle: () => <HomeTitle />,
-  
-}
+};
 
 SectionTrainingInfo.navigationOptions = {
   headerTitle: () => <HomeTitle />,
-  
-}
+};
 
 Login.navigationOptions = {
   title: 'Iniciar Sesion',
@@ -92,8 +91,6 @@ SignInOrg.navigationOptions = {
   headerLeft: null,
 };
 
-
-
 const AppNavigator = createStackNavigator(
   {
     Home: HomeScreen,
@@ -107,11 +104,9 @@ const AppNavigator = createStackNavigator(
     LoginOrg: LoginOrg,
     CourseInfo: SectionTrainingInfo,
     OfferInfo: OffersInfo,
-    
   },
   {
     initialRouteName: 'Home',
-    
   },
 );
 

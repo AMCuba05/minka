@@ -1,23 +1,31 @@
 import React, {useState} from 'react';
 import {View, Picker, StyleSheet, TextInput} from 'react-native';
 
-export default function HourCargo() {
+export default function Field({rubro}) {
   const [selectedValue, setSelectedValue] = useState('Reposteria');
+  let r = rubro;
   return (
     <View style={styles.container}>
       <Picker
         selectedValue={selectedValue}
         style={styles.picker}
-        onValueChange={(itemValue, itemIndex) => setSelectedValue(itemValue)}>
-        <Picker.Item label="Reposteria" value="0" />
-        <Picker.Item label="Manualidades" value="1" />
-        <Picker.Item label="Corte y Confeccion" value="2" />
-        <Picker.Item label="Peluqueria" value="3" />
-        <Picker.Item label="Asistente de Ventas" value="4" />
-        <Picker.Item label="Otro" value="5" />
+        onValueChange={(itemValue, itemIndex) => {
+          r = selectedValue;
+          setSelectedValue(itemValue);
+        }}>
+        <Picker.Item label="Reposteria" value="reposteria" />
+        <Picker.Item label="Manualidades" value="manualidades" />
+        <Picker.Item label="Corte y Confeccion" value="corte_confeccion" />
+        <Picker.Item label="Peluqueria" value="peluqueria" />
+        <Picker.Item label="Asistente de Ventas" value="asistente_ventas" />
+        <Picker.Item label="Otro" value="other" />
       </Picker>
-      {selectedValue === '5' ? (
-        <TextInput style={styles.textInput} placeholder={'Otro'} />
+      {selectedValue === 'other' ? (
+        <TextInput
+          style={styles.textInput}
+          placeholder={'Otro'}
+          onChangeText={setSelectedValue}
+        />
       ) : null}
     </View>
   );

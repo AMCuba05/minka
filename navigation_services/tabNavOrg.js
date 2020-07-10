@@ -20,6 +20,7 @@ const TabNavigatorOrg = createBottomTabNavigator(
     defaultNavigationOptions: ({navigation}) => ({
       showLabel: false,
       tabBarIcon: ({focused, horizontal, tintColor}) => {
+        console.log(navigation.getParam('itemID'));
         const {routeName} = navigation.state;
         let IconComponent = Icon;
         let iconName;

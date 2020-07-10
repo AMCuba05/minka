@@ -5,7 +5,7 @@ export default class ProfileOrg extends Component {
   render() {
     return (
       <View>
-        <Text>Profile</Text>
+        <Text>{this.props.navigation.getParam('itemID')}</Text>
       </View>
     );
   }
