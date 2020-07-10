@@ -21,6 +21,9 @@ TabNavigatorOrg.navigationOptions = {
   headerLeft: null,
 };
 
+TabNavigatorUsr.navigationOptions = {
+  header: null,
+}
 
 
 OffersInfo.navigationOptions = {

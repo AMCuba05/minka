@@ -8,14 +8,14 @@ import Offers from './../screens/Offers';
 import ProfileUsr from './../screens/ProfileUsr';
 import NotificationsUsr from './../screens/NotificationsUsr';
 import Icon from 'react-native-vector-icons/FontAwesome5';
-
+import OfferNav from './../screens/OfferNav';
 
 
 
 
 const TabNavigatorUsr = createBottomTabNavigator(
   {
-    Trabajo: Offers,
+    Trabajo: OfferNav,
     Cursos: SectionTraining,
     Notificaciones: NotificationsUsr,
     Perfil: ProfileUsr,
