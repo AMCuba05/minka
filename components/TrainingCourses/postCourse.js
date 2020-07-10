@@ -22,12 +22,12 @@ const PostCourse = ({ course, navigation }) => {
                 <View  >
                     <TouchableHighlight 
                     onPress={() => navigation.navigate('CourseInfo',{
-                        titulo: course.course,
-                        descripcion: course.descripcion,
-                        tipo: course.tipo,
-                        duracion: course.duracion,
-                        fecha: course.fecha,
-                        nivel: course.nivel,    
+                        titulo: course.courseName,
+                        descripcion: course.description,
+                        tipo: course.field,
+                        
+                        fecha: course.startDate,
+                        nivel: course.difficulty,    
                     })}
                     style={styles.boxBtn}
                     underlayColor= 'rgba(141,126,242,0.6)'>

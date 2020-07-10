@@ -12,7 +12,7 @@ const OfferJob = ({offer, navigation}) =>{
     return(
         <View style={styles.boxOffer}>
             <View style={styles.boxTitle}>
-                <Text style={styles.title}>{offer.organizationName} </Text>
+                <Text style={styles.title}>{offer.description} </Text>
             </View>
             
             <View style={styles.boxInfo}>
@@ -24,12 +24,12 @@ const OfferJob = ({offer, navigation}) =>{
             <View >
                 <TouchableHighlight
                 onPress={() => navigation.navigate('OfferInfo',{
-                    titulo: offer.title,
-                    horas: offer.hours,
-                    ubicacion: offer.ubication,
-                    fecha: offer.posted,
-                    pago: offer.payment,
-                    descripcion: offer.descripcion,
+                    titulo: offer.organizationName,
+                    horas: offer.workload,
+                    ubicacion: offer.location,
+                    fecha: offer.createdAt,
+                    pago: offer.payRange,
+                    descripcion: offer.description,
                 })}
                 style={styles.boxBtn}
                 underlayColor= 'rgba(141,126,242,0.6)'>

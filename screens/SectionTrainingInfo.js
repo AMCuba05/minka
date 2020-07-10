@@ -19,7 +19,7 @@ export default class SectionTrainingInfo extends React.Component {
                         
 
                         <Text style={styles.boxText}>Tipo: {navigation.getParam('tipo', 'default value')} </Text>
-                        <Text style={styles.boxText}>Duracion: {navigation.getParam('duracion', 'default value')} </Text>
+                        
                         <Text style={styles.boxText}>Nivel: {navigation.getParam('nivel', 'default value')} </Text>
                         <Text style={styles.boxText}>Fecha: {navigation.getParam('fecha', 'default value')} </Text>
 
