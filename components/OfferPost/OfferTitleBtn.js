@@ -5,7 +5,7 @@ import OfferTitle from './OfferTitle';
 import ModalPost from './modalPost';
 let IconComponent = Icon;
 
-const OfferTitleBtn = () => {
+const OfferTitleBtn = ({setOfferJob}) => {
     const [modalVisible, setModalVisible] = useState(false);
     return (
         <>
@@ -23,7 +23,7 @@ const OfferTitleBtn = () => {
 
             </View>
             <View>
-                <ModalPost modalVisible={modalVisible} setModalVisible={setModalVisible}/>
+                <ModalPost modalVisible={modalVisible} setModalVisible={setModalVisible} setOfferJob={setOfferJob}/>
             </View>
         </>
     )

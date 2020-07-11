@@ -11,13 +11,15 @@ import Icon from 'react-native-vector-icons/FontAwesome5';
 import buttonsNavUsrCourse from './buttonsNavUsrCourse';
 import buttonsNavUserOffer from './buttonsNavUsrOffer';
 import buttonsNavUsrNot from './buttonsNavUsrNot';
+import buttonsNavUsrPerfil from './buttonsNavUsrPerfil';
+
 
 const TabNavigatorUsr = createBottomTabNavigator(
   {
     Trabajo: buttonsNavUserOffer,
     Cursos: buttonsNavUsrCourse,
     Notificaciones: buttonsNavUsrNot,
-    Perfil: ProfileUsr,
+    Perfil: buttonsNavUsrPerfil,
   },
   {
     defaultNavigationOptions: ({navigation}) => ({

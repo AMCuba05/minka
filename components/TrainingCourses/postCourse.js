@@ -10,23 +10,24 @@ const PostCourse = ({ course, navigation }) => {
     return (
         <View style={styles.boxCourse}>
             <View style={styles.boxTitle}>
-                <Text style={styles.title}>{course.course}</Text>
+                <Text style={styles.title}>{course.courseName}</Text>
             </View>
             <View style={styles.flexbox}>
                 <View style={styles.boxInfo}>
-                    <Text style={styles.info} >Tipo: {course.tipo}</Text>
-                    <Text style={styles.info}>Duracion: {course.duracion}</Text>
-                    <Text style={styles.info}>Fecha: {course.fecha}</Text>
+                    <Text style={styles.info} >Categoria: {course.field}</Text>
+                    <Text style={styles.info}>Dificultad: {course.difficulty}</Text>
+                    <Text style={styles.info}>Fecha de Inicio: </Text>
+                    <Text>{course.startDate}</Text>
                 </View>
                 <View  >
                     <TouchableHighlight 
                     onPress={() => navigation.navigate('CourseInfo',{
-                        titulo: course.course,
-                        descripcion: course.descripcion,
-                        tipo: course.tipo,
-                        duracion: course.duracion,
-                        fecha: course.fecha,
-                        nivel: course.nivel,    
+                        titulo: course.courseName,
+                        descripcion: course.description,
+                        tipo: course.field,
+                        
+                        fecha: course.startDate,
+                        nivel: course.difficulty,    
                     })}
                     style={styles.boxBtn}
                     underlayColor= 'rgba(141,126,242,0.6)'>
@@ -43,8 +44,8 @@ const PostCourse = ({ course, navigation }) => {
 const styles = StyleSheet.create({
     boxCourse: {
         backgroundColor: '#f1f9ff',
-        width: 295,
-        height: 108,
+        width: 300,
+        height: 128,
         borderRadius: 10,
         marginVertical: 15,
         alignSelf: 'center'
@@ -64,7 +65,7 @@ const styles = StyleSheet.create({
     boxInfo: {
         paddingHorizontal: 15,
         marginVertical: 10,
-        marginHorizontal: 20
+        marginHorizontal: 10
 
     },
     info: {

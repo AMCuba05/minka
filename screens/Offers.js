@@ -10,7 +10,7 @@ export default class Offers extends React.Component {
       <View>
         <View style={styles.body}>
 
-        <OfferTitleBtn/>
+        
         </View>
 
         <OfferjobsPost 
