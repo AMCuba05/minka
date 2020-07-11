@@ -19,12 +19,12 @@ class ProfileInfo extends Component {
 
   componentDidMount() {
     axios
-      .get('https://api-minka.herokuapp.com/user/' + this.id)
+      .get('https://api-minka.herokuapp.com/organization/' + this.id)
       .then(response => {
         this.setState({
           nombre: response.data.name,
           email: response.data.email,
-          ci: response.data.ci,
+          nit: response.data.nit,
           descripcion: response.data.description,
         });
       })
@@ -43,8 +43,8 @@ class ProfileInfo extends Component {
             <Text style={styles.titleInfoBox}>Informacion de Contacto</Text>
             <Text style={styles.textTitleInfo}>Email:</Text>
             <Text style={styles.textInfo}>{this.state.email}</Text>
-            <Text style={styles.textTitleInfo}>CI: </Text>
-            <Text style={styles.textInfo}>{this.state.ci} </Text>
+            <Text style={styles.textTitleInfo}>NIT: </Text>
+            <Text style={styles.textInfo}>{this.state.nit} </Text>
           </View>
         </View>
         <View>

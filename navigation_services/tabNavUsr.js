@@ -13,6 +13,7 @@ import buttonsNavUserOffer from './buttonsNavUsrOffer';
 import buttonsNavUsrNot from './buttonsNavUsrNot';
 import buttonsNavUsrPerfil from './buttonsNavUsrPerfil';
 
+
 const TabNavigatorUsr = createBottomTabNavigator(
   {
     Trabajo: buttonsNavUserOffer,
@@ -22,7 +23,6 @@ const TabNavigatorUsr = createBottomTabNavigator(
   },
   {
     defaultNavigationOptions: ({navigation}) => ({
-      
       showLabel: false,
       tabBarIcon: ({focused, horizontal, tintColor}) => {
         const {routeName} = navigation.state;
@@ -47,8 +47,6 @@ const TabNavigatorUsr = createBottomTabNavigator(
       inactiveTintColor: 'gray',
     },
   },
-
-  
 );
 
 export default createAppContainer(TabNavigatorUsr);

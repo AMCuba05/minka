@@ -1,16 +1,15 @@
 import React, {Component} from 'react';
 import {View, Text, Button, FlatList, StyleSheet} from 'react-native';
 
-const data = [{id: 1}, {id: 2}, {id: 3}, {id: 4}, {id: 5}, {id: 6}, {id: 7}];
 export default class ViewNotification extends Component {
   renderItem(item) {
     return (
       <View style={styles.card}>
         <View style={styles.title}>
-          <Text style={styles.textTitle}>Perfil name {item.id}</Text>
+          <Text style={styles.textTitle}>Nombre: {item.item.name}</Text>
         </View>
         <View>
-          <Text>Celular</Text>
+          <Text>Contacto: {item.item.contact}</Text>
         </View>
         <View style={styles.buttons}>
           <View style={styles.button}>
@@ -26,7 +25,7 @@ export default class ViewNotification extends Component {
     return (
       <View>
         <FlatList
-          data={data}
+          data={this.props.navigation.getParam('data')}
           renderItem={item => this.renderItem(item)}
           keyExtractor={item => item.id}
         />

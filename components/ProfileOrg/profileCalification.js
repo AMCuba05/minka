@@ -14,7 +14,7 @@ class ProfileCalification extends Component {
 
   componentDidMount() {
     axios
-      .get('https://api-minka.herokuapp.com/user/' + this.id)
+      .get('https://api-minka.herokuapp.com/organization/' + this.id)
       .then(response => {
         this.setState({
           valoration: response.data.valuation,

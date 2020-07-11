@@ -6,20 +6,21 @@ import {createBottomTabNavigator} from 'react-navigation-tabs';
 import OfferJob from './../screens/OfferJob';
 import OfferCourse from './../screens/OfferCourse';
 import ProfileOrg from './../screens/ProfileOrg';
-import NotificationsNavOrg from './notificationsNavOrg';
+import NotificationsOrg from './../screens/NotificationsOrg';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 
 const TabNavigatorOrg = createBottomTabNavigator(
   {
     Trabajo: OfferJob,
     Cursos: OfferCourse,
-    Notificaciones: NotificationsNavOrg,
+    Notificaciones: NotificationsOrg,
     Perfil: ProfileOrg,
   },
   {
     defaultNavigationOptions: ({navigation}) => ({
       showLabel: false,
       tabBarIcon: ({focused, horizontal, tintColor}) => {
+        console.log(navigation.getParam('itemID'));
         const {routeName} = navigation.state;
         let IconComponent = Icon;
         let iconName;

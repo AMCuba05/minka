@@ -5,6 +5,7 @@ import axios from 'axios';
 export default class LoginInput extends Component {
   constructor(props) {
     super(props);
+    this.navigation = props.navigation;
     this.state = {
       email: '',
       password: '',
@@ -18,9 +19,9 @@ export default class LoginInput extends Component {
         password: this.state.password,
       })
       .then(function(response) {
-        console.log(response);
-        Alert.alert('login completados');
-        this.props.navigation.navigate('UserView');
+        this.navigation.navigate('UserView', {
+          itemID: response.data._id,
+        });
       })
       .catch(function(error) {
         Alert.alert('Error');

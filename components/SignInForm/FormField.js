@@ -15,7 +15,7 @@ export default class FormFieldUsr extends Component {
     };
   }
 
-  validate() {
+  validate(navigation) {
     const blanckspaces =
       this.state.name === '' ||
       this.state.email === '' ||
@@ -32,6 +32,7 @@ export default class FormFieldUsr extends Component {
           })
           .then(function(response) {
             Alert.alert('Organizacion Registrada Correctamente');
+            navigation.navigate('LoginOrg');
           })
           .catch(function(error) {
             Alert.alert('Ha ocurrido un error');
@@ -88,7 +89,7 @@ export default class FormFieldUsr extends Component {
         <Button
           color={'#8d7ef2'}
           title={'REGISTRARSE'}
-          onPress={() => this.validate()}
+          onPress={() => this.validate(this.props.navigation)}
         />
       </View>
     );

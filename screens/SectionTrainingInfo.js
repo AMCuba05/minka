@@ -1,12 +1,44 @@
-import React, { Component } from 'react';
-import { View, StyleSheet, ScrollView, Text, TouchableHighlight, TextInput } from 'react-native';
+import React, {Component} from 'react';
+import {
+  View,
+  StyleSheet,
+  ScrollView,
+  Text,
+  TouchableHighlight,
+} from 'react-native';
 
 export default class SectionTrainingInfo extends React.Component {
+  render() {
+    const {navigation} = this.props;
+    return (
+      <ScrollView style={styles.body}>
+        <View style={styles.boxTitle}>
+          <Text style={styles.title}>
+            {' '}
+            {navigation.getParam('titulo', 'default value')}{' '}
+          </Text>
+        </View>
+        <View style={styles.boxStyle}>
+          <View style={styles.boxInfo}>
+            <View style={styles.boxInfoTitle}>
+              <Text style={styles.boxText}>
+                Descripcion:{' '}
+                {navigation.getParam('descripcion', 'default value')}{' '}
+              </Text>
+            </View>
 
-    render() {
-        const { navigation } = this.props;
-        return (
-
+            <Text style={styles.boxText}>
+              Tipo: {navigation.getParam('tipo', 'default value')}{' '}
+            </Text>
+            <Text style={styles.boxText}>
+              Duracion: {navigation.getParam('duracion', 'default value')}{' '}
+            </Text>
+            <Text style={styles.boxText}>
+              Nivel: {navigation.getParam('nivel', 'default value')}{' '}
+            </Text>
+            <Text style={styles.boxText}>
+              Fecha: {navigation.getParam('fecha', 'default value')}{' '}
+            </Text>
             <ScrollView style={styles.body}>
                 <View style={styles.boxTitle}>
                     <Text style={styles.title}> {navigation.getParam('titulo', 'default value')} </Text>
@@ -49,7 +81,6 @@ export default class SectionTrainingInfo extends React.Component {
         )
     }
 }
-
 
 const styles = StyleSheet.create({
     body: {
