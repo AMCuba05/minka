@@ -13,13 +13,12 @@ import buttonsNavUserOffer from './buttonsNavUsrOffer';
 import buttonsNavUsrNot from './buttonsNavUsrNot';
 import buttonsNavUsrPerfil from './buttonsNavUsrPerfil';
 
-
 const TabNavigatorUsr = createBottomTabNavigator(
   {
     Trabajo: buttonsNavUserOffer,
     Cursos: buttonsNavUsrCourse,
     Notificaciones: buttonsNavUsrNot,
-    Perfil: buttonsNavUsrPerfil,
+    Perfil: ProfileUsr,
   },
   {
     defaultNavigationOptions: ({navigation}) => ({

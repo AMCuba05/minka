@@ -1,49 +1,21 @@
-import React, { useState, useEffect } from 'react';
-import { Modal, View, Text, StyleSheet, TouchableHighlight, Picker } from 'react-native';
-import { RadioButton } from 'react-native-paper';
+import React, {useState, useEffect} from 'react';
+import {
+  Modal,
+  View,
+  Text,
+  StyleSheet,
+  TouchableHighlight,
+  Picker,
+} from 'react-native';
+import {RadioButton} from 'react-native-paper';
 import Zone from '../Pickers/Zone';
 import axios from 'axios';
-const ModalPost = ({ modalVisible, setModalVisible, setOfferJob }) => {
+const ModalPost = ({modalVisible, setModalVisible, setOfferJob}) => {
   const [checked, setChecked] = React.useState('all');
   const [guardar, setGuardar] = React.useState('');
-+
-
-  useEffect(() => {
-    
-      const consultarAPIreposteria = async() => {
-        if(checked == 'all'){
-          const url = 'https://api-minka.herokuapp.com/job';
-          const resultado = await axios.get(url);
-          setOfferJob(resultado.data);
-      
-        }else if (checked == 'reposteria'){
-
-          const url = 'https://api-minka.herokuapp.com/job?field=reposteria';
-          const resultado = await axios.get(url);
-          setOfferJob(resultado.data);
-        }
-        
-    
-    
-  }
-    consultarAPIreposteria();
-    
-    
-    }
-    
-    
-},[]);
-
 
   return (
-
-
-    <Modal
-      animationType="fade"
-      transparent={true}
-      visible={modalVisible}
-
-    >
+    <Modal animationType="fade" transparent={true} visible={modalVisible}>
       <View style={styles.centeredView}>
         <View style={styles.modalView}>
           <Text style={styles.modalText}>Categorias</Text>
@@ -74,7 +46,6 @@ const ModalPost = ({ modalVisible, setModalVisible, setOfferJob }) => {
             <Text style={styles.flexModalText}>Corte y confeccion</Text>
           </View>
 
-
           <View style={styles.flexModal}>
             <RadioButton
               value="peluqueria"
@@ -85,76 +56,69 @@ const ModalPost = ({ modalVisible, setModalVisible, setOfferJob }) => {
           </View>
           <View>
             <Text style={styles.modalText}>Ubicacion/Zona</Text>
-            <Zone/>
+            <Zone />
           </View>
           <TouchableHighlight
             style={styles.openButton}
-            underlayColor= 'rgba(141,126,242,0.6)'
-            onPress={() => { setModalVisible(!modalVisible), setOFertas() }}
-          >
+            underlayColor="rgba(141,126,242,0.6)"
+            onPress={() => {
+              setModalVisible(!modalVisible);
+            }}>
             <Text style={styles.textStyle}>Filtrar</Text>
           </TouchableHighlight>
         </View>
       </View>
     </Modal>
-
-
-  )
-}
+  );
+};
 
 const styles = StyleSheet.create({
-  modalView: {
-    justifyContent: 'center',
-    flex: 1,
-
-  },
   centeredView: {
     flex: 1,
     position: 'relative',
     marginTop: 90,
-
   },
   modalView: {
     margin: 20,
-    backgroundColor: "white",
+    backgroundColor: 'white',
     borderRadius: 20,
     padding: 35,
 
-    shadowColor: "#000",
+    shadowColor: '#000',
     shadowOffset: {
       width: 0,
-      height: 2
+      height: 2,
     },
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
-    elevation: 5
+    elevation: 5,
   },
   openButton: {
-    backgroundColor: "#8d7ef2",
+    backgroundColor: '#8d7ef2',
     borderRadius: 20,
     padding: 10,
     elevation: 2,
-    marginTop: 20, 
+    marginTop: 20,
     width: 100,
     alignSelf: 'center',
   },
   textStyle: {
-    color: "white",
-    fontWeight: "bold",
-    textAlign: "center"
+    color: 'white',
+    fontWeight: 'bold',
+    textAlign: 'center',
   },
   modalText: {
     marginBottom: 15,
     color: '#5849bf',
-    fontSize: 17
+    fontSize: 17,
   },
   flexModal: {
     flexDirection: 'row',
   },
   flexModalText: {
     lineHeight: 33,
-    fontSize: 15
-  }
-})
+    fontSize: 15,
+  },
+});
 
 export default ModalPost;
